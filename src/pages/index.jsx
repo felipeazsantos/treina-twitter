@@ -1,4 +1,5 @@
 import TextInput from "../components/TextInput";
+import Tweet from "../components/Tweet";
 import { useState } from "react";
 import styles from './Index.module.css';
 
@@ -42,7 +43,13 @@ export default function Index() {
             </div>
 
             <ul>
-                  {tweetList.map((tweet, i) => <li key={i}>{tweet}</li>)}
+                  {tweetList.map((tweet, i) => {
+                    return (
+                        <li>
+                            <Tweet key={i}>{tweet}</Tweet>
+                        </li>
+                    )
+                  })}
             </ul>
         </div>
     )
