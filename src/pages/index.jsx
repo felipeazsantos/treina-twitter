@@ -1,5 +1,6 @@
 import TextInput from "../components/TextInput";
 import { useState } from "react";
+import styles from './Index.module.css';
 
 export default function Index() {
     const [text, setText] = useState('');
@@ -20,9 +21,12 @@ export default function Index() {
 
     return (
         <div>
-            <h1>TreinaTwitter</h1>
-            <div>
-                <img src={'https://github.com/felipeazsantos.png'} alt="" />
+            <h1 className={styles.pageTitle}>TreinaTwitter</h1>
+            <div className={styles.tweetContainer}>
+                <img 
+                    className={styles.avatar} 
+                    src={'https://github.com/felipeazsantos.png'} 
+                    alt="" />
                 <TextInput 
                     placeholder={'O que está acontecendo'}
                     value={text}
@@ -30,9 +34,11 @@ export default function Index() {
                     maxLength={maxLength} 
                 />
             </div>
-            <div>
+            <div className={styles.buttonContainer}>
                 <div>{text.length} / {maxLength}</div>
-                <button onClick={sendTweet}>Tweetar</button>
+                <button
+                    className={styles.tweetButton} 
+                    onClick={sendTweet}>Tweetar</button>
             </div>
 
             <ul>
